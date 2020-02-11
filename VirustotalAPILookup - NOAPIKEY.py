@@ -108,7 +108,7 @@ def DomainLookup(domain):           #See your notepad++ for json output for pars
                 if len(detected_malware_list) > 1:
                     print(f"[!] Displaying 1 randomly selected malware result.")
                     print("----------------------------------------------------")
-                    random_detection = detected_malware_list[random.randint(0,len(detected_malware_list))]
+                    random_detection = detected_malware_list[random.randint(0,len(detected_malware_list) - 1)]
                     FileHashLookup(random_detection['sha256'])
                 if len(detected_malware_list) <= 1:
                     for detection in detected_malware_list:
@@ -118,7 +118,7 @@ def DomainLookup(domain):           #See your notepad++ for json output for pars
                 if len(detected_urls) > 1:
                     print(f"[!] Displaying 1 randomly selected malicious URL result.")
                     print("----------------------------------------------------")
-                    random_detection = detected_urls[random.randint(0,len(detected_urls))]
+                    random_detection = detected_urls[random.randint(0,len(detected_urls) - 1)]
                     URLLookup(random_detection['url'])
                 if len(detected_urls) <= 1:
                     for detection in detected_urls:
